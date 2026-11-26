@@ -10,16 +10,19 @@
 
 ```text
 dengue-kaohsiung-weather/
-├── dengue_weather.ipynb                        # 完整資料清理、統計彙總與視覺化程式碼
-├── data/
-│   └── kaohsiung_dengue_weather_2014_2025.csv  # 清理與合併後之 144 個月主資料集（144 列、7 欄）
-├── figures/
-│   ├── fig1_timeseries.png                     # 雙軸時間序列圖（線性尺度）
-│   ├── fig1b_timeseries_log.png                # 雙軸時間序列圖（log10(cases+1) 對數尺度）
-│   ├── fig2_seasonal_profile.png               # 1–12 月季節輪廓圖（2014–2025 平均值 vs 中位數）
-│   └── fig3_lag_correlation.png                # 氣象因子領先 0–4 個月相關係數圖
+├── dengue_weather.ipynb                     # 完整資料清理、統計彙總與視覺化程式碼
+├── kaohsiung_dengue_weather_2014_2025.csv  # 清理與合併後之 144 個月主資料集（144 列、7 欄）
+├── fig1_timeseries.png                     # 雙軸時間序列圖（線性尺度）
+├── fig1b_timeseries_log.png                # 雙軸時間序列圖（log10(cases+1) 對數尺度）
+├── fig2_seasonal_profile.png               # 1–12 月季節輪廓圖（2014–2025 平均值 vs 中位數）
+├── fig3_lag_correlation.png                # 氣象因子領先 0–4 個月相關係數圖
+├── nidss_query.png                         # NIDSS 查詢條件畫面截圖
 └── README.md
 ```
+
+註：在 Colab 執行 notebook 時，資料與圖表會分別輸出至 `data/` 與 `figures/` 資料夾；本倉庫為方便瀏覽，將輸出檔案直接置於根目錄。
+
+![2014–2025 高雄本土登革熱（對數尺度）與氣象因子時間序列](fig1b_timeseries_log.png)
 
 原始下載檔未放入本倉庫，重現方式見第二節與第六節。
 
@@ -30,7 +33,7 @@ dengue-kaohsiung-weather/
 | 登革熱本土確定病例（月） | 衛生福利部疾病管制署 傳染病統計資料查詢系統（NIDSS） | 發病年月、確定病例數 |
 | 高雄氣象站逐月資料 | 中央氣象署 CODiS 氣候資料服務系統，測站 467440（2014–2021）、467441（2022–2025） | 氣溫(℃)、降水量(mm) |
 
-**NIDSS 查詢條件**（查詢類別：進階）：疾病＝登革熱；資料期間＝年月 2014-01 至 2025-12；日期種類＝發病日；感染來源＝本土病例；地區別＝高屏區／高雄市／全部。查詢畫面見 `figures/nidss_query.png`。
+**NIDSS 查詢條件**（查詢類別：進階）：疾病＝登革熱；資料期間＝年月 2014-01 至 2025-12；日期種類＝發病日；感染來源＝本土病例；地區別＝高屏區／高雄市／全部。查詢畫面見 [`nidss_query.png`](nidss_query.png)。
 
 篩選檢核：（1）本資料 2025 年合計 14 例，與 NIDSS 同一查詢頁面統計表之「2025年（去年總數）」14 例一致。（2）本資料 2015 年高雄市本土病例合計 19,723 例（依發病年月），量級與衛福部 2015-12-29 新聞稿〈[高雄市登革熱疫情連5週趨緩，持續孳清降低感染風險](https://mohw.gov.tw/cp-16-19710-1.html)〉所公布之高雄市入夏後累計 19,395 例（統計至 12 月 28 日）相近；差異可能來自統計截止日不同（新聞稿為年底前之即時累計，本資料為事後完整資料）及統計範圍（入夏後 vs 全年）。
 
